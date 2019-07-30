@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Video</title>
+<script>
+var first=document.getElementById("video").value;
+function playfirst() { 
+	  first.play(); 
+	} 
+
+	function pausefirst() { 
+	  first.pause(); 
+	} 
+</script>
+</head>
+<body>
+<center>
+<pre><h1 style="color:blue">Awesome online videos</h1><img src="videologo.png" width="50" height="40"></pre>
+<button onclick="playfirst()" type="button">Play Video</button>
+<button onclick="pausefirst()" type="button">Pause Video</button><br> 
+<video id="video" width="400" controls>
+<source src="videos.mp4" type="video/mp4">
+<source src="videos.ogg" type="video/ogg">
+</video>
+</center>
+</body>
+</html>

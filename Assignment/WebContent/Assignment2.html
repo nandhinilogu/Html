@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+function get(){
+	var name=document.getElementById("name").value;
+	var key=/^[a-zA-Z]+$/;
+	if(!name.match(key)){
+		alert("name not in format");
+		return false;
+	}
+	var age=document.getElementById("age").value;
+	var key1=/^[0-9]+$/;
+	if(!age.match(key1)){
+		alert("age not in format");
+		return false;
+	}
+	if(+age<18){
+		alert("please enter age should be greater than 18");
+		return false;
+	}
+	var email=document.getElementById("email").value;
+	var key2=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+	if(!email.match(key2)){
+		alert("email not in format");
+		return false;
+	}
+	var city=document.getElementById("city").value;
+	if(city=="none"){
+		alert("no option is selected");
+		return false;
+	}
+	return true;
+}
+</script>
+<meta charset="ISO-8859-1">
+<title>Xena Events</title>
+<style>
+i,label{
+color:blue;
+}
+div{
+color:brown;
+font-family:"Times New Roman";
+padding:50px;
+}
+</style>
+</head>
+<body>
+<form action="Welcome.html">
+<center>
+<img src="logo.png" width="300" height="150"><i>Event from Nov 28th 2019 onwards for 5 days</i>
+<div><h3>Xena Events</h3></div>
+<table cellpadding="10" cellspacing="10">
+<tr><td><label>Name</label></td>
+<td><input type="text" id="name" name="name" class="form-control" required></td></tr>
+<tr><td><label>Age</label></td>
+<td><input type="text" id="age" name="age" class="form-control" required></td></tr>
+<tr><td><label>EmailId</label></td>
+<td><input type="text" id="email" name="email" class="form-control" required></td></tr>
+<tr><td><label>City</label></td>
+<td><select id="city" name="city" class="form-control">
+<option value="none">Select</option>
+<option value="Rajkot">"Rajkot</option>
+<option value="Vizag">Vizag</option>
+<option value="Bangalore">Bangalore</option>
+</select></td></tr>
+<tr><td><input type="submit" value="Submit" class="btn btn-primary" onclick="return get()"></td></tr>
+</table>
+</center>
+</form>
+</body>
+</html>
